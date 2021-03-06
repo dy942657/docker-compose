@@ -1,0 +1,16 @@
+version: "2"
+services:
+  influx:
+    image: drycc/rabbitmq:canary
+    container_name: rabbitmq
+    restart: always
+    privileged: true
+    # environment:
+    # - INFLUXD_CONFIG_PATH=/home/influxdb
+    volumes:
+    - ./:/etc/rabbitmq
+    - /data/rabbitmq:/data
+networks:
+  default:
+    external:
+      name: web

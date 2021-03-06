@@ -1,0 +1,19 @@
+version: "2"
+services:
+  pgadmin4:
+    image: dpage/pgadmin4 
+    container_name: pgadmin4
+    restart: always
+    privileged: true
+    environment:
+    - PGADMIN_DEFAULT_EMAIL=postgres
+    - PGADMIN_DEFAULT_PASSWORD=123456
+    ports:
+    - 81:80
+    volumes:
+    - /data/pgadmin4:/var/lib/pgadmin
+networks:
+  default:
+    external:
+      name: web
+

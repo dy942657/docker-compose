@@ -1,0 +1,24 @@
+version: "2"
+services:
+  influx:
+    image: quay.io/influxdb/influxdb:v2.0.4
+    container_name: influx
+    restart: always
+    privileged: true
+    environment:
+    - INFLUXD_CONFIG_PATH=/home/influxdb
+    - INFLUXDB_ORG=drycc
+    - INFLUXDB_BUCKET=kubernetes
+    - INFLUXDB_USER=admin
+    - INFLUXDB_PASSWORD=admin123
+    - INFLUXDB_TOKEN=c1dd65d8402c11eb9baa309c23a2313f
+    - INFLUXDB_RETENTION=30d
+    ports:
+    - 8086:8086
+    volumes:
+    - /data/influx:/root/.influxdbv2
+
+networks:
+  default:
+    external:
+      name: web

@@ -1,0 +1,16 @@
+version: "2"
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+    - 3000:3000
+    volumes:
+    - ./grafana.ini:/etc/grafana/grafana.ini
+    - /etc/hosts:/etc/hosts
+    privileged: true
+networks:
+  default:
+    external:
+      name: web
