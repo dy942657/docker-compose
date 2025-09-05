@@ -1,0 +1,7 @@
+version: '2'
+services:
+  redisinsight:
+    image: redisinsight
+    container_name: redisinsight
+    ports:
+      - "5540:5540"

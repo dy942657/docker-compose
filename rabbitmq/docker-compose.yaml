@@ -1,7 +1,7 @@
 version: "2"
 services:
   influx:
-    image: drycc/rabbitmq:canary
+    image: rabbitmq:canary
     container_name: rabbitmq
     restart: always
     privileged: true

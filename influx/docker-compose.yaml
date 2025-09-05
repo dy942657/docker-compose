@@ -7,7 +7,7 @@ services:
     privileged: true
     environment:
     - INFLUXD_CONFIG_PATH=/home/influxdb
-    - INFLUXDB_ORG=drycc
+    - INFLUXDB_ORG=
     - INFLUXDB_BUCKET=kubernetes
     - INFLUXDB_USER=admin
     - INFLUXDB_PASSWORD=admin123
